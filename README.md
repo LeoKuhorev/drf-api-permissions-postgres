@@ -68,3 +68,6 @@ If you're having troubles with installing `psycopg2` try this solution (for Mac 
 ### Dev Dependencies:
 
 [Pylint-Django (v. 2.3.0)](https://pypi.org/project/pylint-django/)
+
+
+[Link to PR]()
