@@ -70,4 +70,4 @@ If you're having troubles with installing `psycopg2` try this solution (for Mac 
 [Pylint-Django (v. 2.3.0)](https://pypi.org/project/pylint-django/)
 
 
-[Link to PR]()
+[Link to PR](https://github.com/LeoKuhorev/drf-api-permissions-postgres/pull/1)
