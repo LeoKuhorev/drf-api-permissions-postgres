@@ -14,7 +14,6 @@ class TestCustomUer(TestCase):
             email='test_user@company.com',
             first_name='test_name',
             last_name='test_last_name',
-            date_of_birth='1990-01-01',
             password='test_password_123')
         self.user.save()
 
@@ -29,7 +28,6 @@ class TestCustomUer(TestCase):
                 email='test_user@company.com',
                 first_name='test_new_name',
                 last_name='test_new_last_name',
-                date_of_birth='1990-01-01',
                 password='test_password_123')
             new_user.save()
         self.assertEqual(IntegrityError, type(raised.exception))

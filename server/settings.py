@@ -54,6 +54,7 @@ INSTALLED_APPS = [
 
     # 3rd party app
     'rest_framework',
+    'crispy_forms',
 ]
 
 MIDDLEWARE = [
@@ -148,3 +149,10 @@ REST_FRAMEWORK = {
         'rest_framework.permissions.IsAuthenticated',
     ]
 }
+
+# Crispy Forms settings
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+# User settings
+LOGIN_REDIRECT_URL = 'home'
+ACCOUNT_LOGOUT_REDIRECT_URL = 'home'
