@@ -3,7 +3,7 @@ version: "3.8"
 services:
     web:
         build: .
-        command: python manage.py runserver 0.0.0.0:8000
+        command: gunicorn server.wsgi:application --bind 0.0.0.0:8000 --workers 4
         volumes:
             - .:/code
         ports:
@@ -16,4 +16,9 @@ services:
         ports:
             - "5432:5432"
         volumes:
-            - $HOME/docker/volumes/postgres:/var/lib/postgresql/data
+            - postgres_data:/var/lib/postgresql/data
+        environment:
+            - POSTGRES_PASSWORD=postgres
+
+volumes:
+    postgres_data:
