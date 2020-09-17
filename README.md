@@ -1,4 +1,4 @@
-# Lab: 32 - Permissions & Postgresql
+# Lab: 32, 33 - Permissions & Postgresql, Authentication & Production Server
 
 ## GETTING STARTED:
 
@@ -6,12 +6,8 @@
 -   `poetry install` to install dependencies
 -   create .env file with listed <a href="#env">below</a> variables and save it into 'server' directory
 -   `docker-compose up --build` - to start docker container
--   `docker ps` to get your container ID (the one that has db in it)
--   `docker exec -it <container_id> psql -U postgres` to get into PSQL
--   run these commands in the psql shell to init the DB:
-    `CREATE USER <username> WITH PASSWORD '<password>';`
-    `ALTER ROLE <username> WITH superuser;`
-    `CREATE DATABASE <db_name> OWNER <username>;`
+
+In another terminal run:
 -   `docker-compose exec web python manage.py makemigrations` - to generate DB schema
 -   `docker-compose exec web python manage.py migrate` - to create DB schema
 -   `docker-compose exec web python manage.py createsuperuser` - to create user with admin access
@@ -51,6 +47,10 @@ If you're having troubles with installing `psycopg2` try this solution (for Mac 
 
 `api/v1/<int:pk>` - API item detail view;
 
+`api/token/` - Obtaining authorization tokens (requires  valid login and password);
+
+`api/token/refresh/` - Refreshing access token by providing a valid refresh token;
+
 
 ### Dependency Documentation:
 
@@ -68,3 +68,6 @@ If you're having troubles with installing `psycopg2` try this solution (for Mac 
 ### Dev Dependencies:
 
 [Pylint-Django (v. 2.3.0)](https://pypi.org/project/pylint-django/)
+
+
+[Link to PR](https://github.com/LeoKuhorev/drf-api-permissions-postgres/pull/1)
